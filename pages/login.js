@@ -15,7 +15,9 @@ export default function Login(props) {
   return (
     <>
       <Box>
-        <Typography>Login Page</Typography>
+        <Typography>rare crate.</Typography>
+        <Typography>Insert Icon here</Typography>
+        <Typography>Insert snappy tagline here</Typography>
         {Object.values(props.providers).map((provider) => (
           <Button
             variant="contained"
