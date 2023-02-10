@@ -1,0 +1,6 @@
+.image {
+    border-radius: 50%;
+    object-fit: fill;
+    position: relative !important;
+    padding: 20px;
+}

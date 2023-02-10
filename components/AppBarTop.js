@@ -6,6 +6,7 @@ import {
   InputBase,
   Box,
   Typography,
+  Badge,
 } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -39,7 +40,9 @@ export default function AppBarTop(props) {
             component="a"
             LinkComponent={Link}
           >
-            <NotificationsIcon />
+            <Badge badgeContent={4} color="secondary">
+              <NotificationsIcon />
+            </Badge>
           </IconButton>
           <IconButton
             size="large"
