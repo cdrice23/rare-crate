@@ -2,18 +2,13 @@ import AppBarBottom from "@/components/AppBarBottom";
 import TimelineControl from "@/components/TimelineControl";
 import AppBarTop from "@/components/AppBarTop";
 import { Box, Button, Typography } from "@mui/material";
-import { signOut } from "next-auth/react";
 
-export default function Home() {
+export default function Profile(props) {
   return (
     <>
       <AppBarTop />
-      <TimelineControl />
       <Box>
-        <Typography>This is supposed to be the timeline page.</Typography>
-        <Button variant="contained" onClick={() => signOut()}>
-          Log out
-        </Button>
+        <Typography>This is a user's profile page.</Typography>
       </Box>
       <AppBarBottom />
     </>

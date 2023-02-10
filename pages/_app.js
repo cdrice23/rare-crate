@@ -1,13 +1,23 @@
 import React from "react";
 import { CssBaseline } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
+import createEmotionCache from "../lib/createEmotionCache";
+import { CacheProvider } from "@emotion/react";
 
-export default function App({ Component, pageProps }) {
+const clientSideEmotionCache = createEmotionCache();
+
+export default function App({
+  Component,
+  pageProps,
+  emotionCache = clientSideEmotionCache,
+}) {
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <CssBaseline />
-        <Component {...pageProps} />
+        <CacheProvider value={emotionCache}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </CacheProvider>
       </StyledEngineProvider>
     </>
   );

@@ -10,6 +10,7 @@ import {
 import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
+import Link from "next/link";
 
 export default function AppBarTop(props) {
   return (
@@ -34,6 +35,9 @@ export default function AppBarTop(props) {
             edge="start"
             color="inherit"
             aria-label="menu"
+            href="/notifications"
+            component="a"
+            LinkComponent={Link}
           >
             <NotificationsIcon />
           </IconButton>
