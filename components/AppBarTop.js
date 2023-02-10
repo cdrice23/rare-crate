@@ -46,6 +46,9 @@ export default function AppBarTop(props) {
             edge="start"
             color="inherit"
             aria-label="menu"
+            href="/settings"
+            component="a"
+            LinkComponent={Link}
           >
             <SettingsIcon />
           </IconButton>
