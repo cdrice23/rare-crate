@@ -1,6 +1,5 @@
-.image {
-    border-radius: 50%;
+.album {
     object-fit: fill;
     position: relative !important;
-    padding: 12px;
+    padding: 4px;
 }

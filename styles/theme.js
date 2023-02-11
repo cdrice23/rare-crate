@@ -12,4 +12,9 @@ export const theme = createTheme({
       default: "#fbf7f5",
     },
   },
+  typography: {
+    button: {
+      textTransform: "none",
+    },
+  },
 });

@@ -5,6 +5,7 @@ import {
   Popover,
   IconButton,
   Divider,
+  Button,
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -16,34 +17,44 @@ import styles from "../styles/ProfileHeader.module.css";
 export default function ProfileHeader(props) {
   return (
     <Grid container>
-      <Grid item container xs={6} minHeight={"50vw"}>
-        <IconButton
-          size="large"
-          color="inherit"
-          aria-label="menu"
-          sx={{ position: "absolute" }}
-        >
-          <LinkIcon />
-        </IconButton>
-        <Grid item xs={12}>
-          <Image
-            fill
-            priority="true"
-            src={defaultData.profilePic}
-            className={styles.image}
-          />
-        </Grid>
-        <IconButton
-          size="large"
-          color="inherit"
-          aria-label="menu"
-          sx={{ position: "absolute" }}
-        >
-          <FavoriteIcon />
-        </IconButton>
+      <Grid item xs={3}>
+        <Image
+          fill
+          priority="true"
+          src={defaultData.profilePic}
+          className={styles.image}
+        />
       </Grid>
-      <Divider orientation="vertical" flexItem />
-      <Grid item xs={6}></Grid>
+      <Grid item container xs={9}>
+        <Grid item xs={12} display="flex">
+          <Typography variant="h5" alignSelf={"center"}>
+            ricechrisdtreat
+          </Typography>
+        </Grid>
+        <Grid item xs={9}>
+          <Button variant="contained" sx={{ minWidth: "100%" }}>
+            Socials
+          </Button>
+        </Grid>
+        <Grid item xs={3}>
+          <IconButton
+            size="large"
+            color="inherit"
+            aria-label="menu"
+            sx={{ alignSelf: "start" }}
+          >
+            <FavoriteIcon />
+          </IconButton>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Box padding={2}>
+          <Typography>
+            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+            consectetur, adipisci velitest
+          </Typography>
+        </Box>
+      </Grid>
     </Grid>
   );
 }
