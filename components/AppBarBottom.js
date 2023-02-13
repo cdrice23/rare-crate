@@ -27,6 +27,7 @@ const StyledFab = styled(Fab)({
 export default function AppBarBottom(props) {
   return (
     <>
+      <Toolbar id="emptyToolbar" />
       <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
         <Toolbar disableGutters>
           <IconButton

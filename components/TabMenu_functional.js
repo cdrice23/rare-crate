@@ -5,18 +5,33 @@ import Following from "./Following";
 import CrateCollection from "./CrateCollection";
 import FavoriteCrates from "./FavoriteCrates";
 
-export default function TabMenu({ handleChange, value }) {
+function Panel(props) {
+  const { children, value, index, id, ...other } = props;
+
+  return (
+    <div
+      role="panel"
+      hidden={value !== index}
+      id={id}
+      aria-labelledby={id}
+      {...other}
+    >
+      {value === index && <>{children}</>}
+    </div>
+  );
+}
+
+export default function TabMenu() {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event) => {
+    setValue(+event.currentTarget.value);
+  };
+
   return (
     <>
-      <Grid container width={"100vw"} py={1}>
-        <Grid
-          item
-          container
-          xs={3}
-          textAlign="center"
-          justifyContent="center"
-          sx={{ backgroundColor: value === 0 ? "#E5E6EB" : "inherit" }}
-        >
+      <Grid container width={"100vw"} padding={1}>
+        <Grid item container xs={3} textAlign="center" justifyContent="center">
           <Button
             variant="text"
             display="flex"
@@ -31,14 +46,7 @@ export default function TabMenu({ handleChange, value }) {
             <Typography>Followers</Typography>
           </Button>
         </Grid>
-        <Grid
-          item
-          container
-          xs={3}
-          textAlign="center"
-          justifyContent="center"
-          sx={{ backgroundColor: value === 1 ? "#E5E6EB" : "inherit" }}
-        >
+        <Grid item container xs={3} textAlign="center" justifyContent="center">
           <Button
             variant="text"
             display="flex"
@@ -55,13 +63,7 @@ export default function TabMenu({ handleChange, value }) {
             </Grid>
           </Button>
         </Grid>
-        <Grid
-          item
-          container
-          xs={3}
-          justifyContent="center"
-          sx={{ backgroundColor: value === 2 ? "#E5E6EB" : "inherit" }}
-        >
+        <Grid item container xs={3} justifyContent="center">
           <Button
             variant="text"
             display="flex"
@@ -78,14 +80,7 @@ export default function TabMenu({ handleChange, value }) {
             </Grid>
           </Button>
         </Grid>
-        <Grid
-          item
-          container
-          xs={3}
-          textAlign="center"
-          justifyContent="center"
-          sx={{ backgroundColor: value === 3 ? "#E5E6EB" : "inherit" }}
-        >
+        <Grid item container xs={3} textAlign="center" justifyContent="center">
           <Button
             variant="text"
             display="flex"
@@ -103,6 +98,18 @@ export default function TabMenu({ handleChange, value }) {
           </Button>
         </Grid>
       </Grid>
+      <Panel value={value} id="followers" index={0}>
+        <Followers />
+      </Panel>
+      <Panel value={value} id="following" index={1}>
+        <Following />
+      </Panel>
+      <Panel value={value} id="crates" index={2}>
+        <CrateCollection />
+      </Panel>
+      <Panel value={value} id="favorites" index={3}>
+        <FavoriteCrates />
+      </Panel>
     </>
   );
 }

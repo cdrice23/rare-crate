@@ -3,6 +3,7 @@ import { Tab, Tabs, Box, Grid, Typography } from "@mui/material";
 import Followers from "./Followers";
 import Following from "./Following";
 import FavoriteCrates from "./FavoriteCrates";
+import CrateCollection from "./CrateCollection";
 
 function TabPanel(props) {
   const { children, value, index, id, ...other } = props;
@@ -20,27 +21,9 @@ function TabPanel(props) {
   );
 }
 
-export default function ProfileTabs() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    console.log(event);
-    setValue(newValue);
-  };
-
+export default function ProfileTabPanel({ value }) {
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          <Tab label="8 Followers" />
-          <Tab label="12 Following" />
-          <Tab label="3 Crates" />
-        </Tabs>
-      </Box>
+    <>
       <TabPanel value={value} id="followers" index={0}>
         <Followers />
       </TabPanel>
@@ -48,8 +31,11 @@ export default function ProfileTabs() {
         <Following />
       </TabPanel>
       <TabPanel value={value} id="crates" index={2}>
+        <CrateCollection />
+      </TabPanel>
+      <TabPanel value={value} id="favorites" index={3}>
         <FavoriteCrates />
       </TabPanel>
-    </Box>
+    </>
   );
 }
