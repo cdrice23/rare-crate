@@ -1,11 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
+import CrateSummary from "./CrateSummary";
 
 export default function CrateCollection(props) {
   return (
     <>
-      <Box>
-        <Typography>This component displays your Crate Collection</Typography>
-      </Box>
+      <Grid container>
+        <CrateSummary />
+      </Grid>
     </>
   );
 }

@@ -24,7 +24,6 @@ export default function ProfileTabs() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    console.log(event);
     setValue(newValue);
   };
 
