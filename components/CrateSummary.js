@@ -30,7 +30,7 @@ export default function CrateSummary() {
                 color={obj.officialTag ? "#6FC276" : "#E5E6EB"}
               />;
             })} */}
-            {[...Array(22)].map((e, i) => (
+            {[...Array(13)].map((e, i) => (
               <SmallChip key={i} size="small" label={`test${i}`} />
             ))}
           </Grid>
