@@ -71,7 +71,7 @@ export default function TabMenu({ handleChange, value }) {
             onClick={(event) => handleChange(event)}
           >
             <Grid item xs={12}>
-              <Typography variant="h5">3</Typography>
+              <Typography variant="h5">4</Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography>Crates</Typography>

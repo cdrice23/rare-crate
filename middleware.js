@@ -2,7 +2,7 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/", "/login"],
+  matcher: ["/settings", "/login"],
 };
 
 export async function middleware(req) {

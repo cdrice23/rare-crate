@@ -1,4 +1,4 @@
-import { Stack, Chip, Grid, Box, Typography } from "@mui/material";
+import { Stack, Chip, Grid, Box, Typography, Tooltip } from "@mui/material";
 import { styled } from "@mui/system";
 import { defaultData } from "@/constants/defaultdata";
 import Image from "next/image";
@@ -9,39 +9,52 @@ const SmallChip = styled(Chip)({
   height: "unset",
 });
 
-export default function CrateSummary() {
+export default function CrateSummary(props) {
   return (
-    <Grid item xs={6}>
-      <Box id="lip"></Box>
-      <Grid container>
-        <Grid item xs={6}>
-          <Image
-            src={defaultData.collection[2].cover}
-            fill
-            priority="true"
-            className={styles.image}
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <Grid container>
-            {/* {defaultData.collection[2].tags.map((obj) => {
-              <Chip
-                label={obj.name}
-                color={obj.officialTag ? "#6FC276" : "#E5E6EB"}
-              />;
-            })} */}
-            {[...Array(13)].map((e, i) => (
-              <SmallChip key={i} size="small" label={`test${i}`} />
-            ))}
-          </Grid>
-          {console.log(
-            defaultData.collection[2].tags.map((obj) => obj.officialTag)
-          )}
-        </Grid>
-        <Box>
-          <Typography>{defaultData.collection[2].name}</Typography>
-        </Box>
-      </Grid>
+    <Grid
+      item
+      xs={5.5}
+      sx={{ backgroundColor: "#EED9C4" }}
+      minHeight={"45vw"}
+      maxHeight={"45vw"}
+      zIndex={-2}
+      margin={1}
+    >
+      <Box
+        id="lip"
+        sx={{
+          backgroundColor: "black",
+          height: "5%",
+          width: "30%",
+          clipPath: "polygon(0 0, 100% 0, 90% 100%, 10% 100%)",
+          // width: "49px",
+          // borderBottom: "solid 20px black",
+          // borderLeft: "9px solid transparent",
+          // borderRight: "9px solid transparent",
+          margin: "0 auto",
+        }}
+      ></Box>
+      <Box maxWidth={"65%"} margin="0 auto">
+        <Image
+          src={props.cover}
+          fill
+          priority="true"
+          className={styles.image}
+        />
+      </Box>
+      <Box
+        textAlign={"center"}
+        sx={{ backgroundColor: "rgba(229, 230, 235, 1)" }}
+        maxWidth="85%"
+        padding={1}
+        margin={"0 auto"}
+      >
+        <Tooltip title={props.name}>
+          <Typography align="center" noWrap fontSize={"0.8rem"}>
+            {props.name}
+          </Typography>
+        </Tooltip>
+      </Box>
     </Grid>
   );
 }

@@ -11,9 +11,6 @@ export default function Home() {
       <TimelineControl />
       <Box>
         <Typography>This is supposed to be the timeline page.</Typography>
-        <Button variant="contained" onClick={() => signOut()}>
-          Log out
-        </Button>
       </Box>
       <AppBarBottom />
     </>

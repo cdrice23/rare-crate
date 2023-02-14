@@ -115,7 +115,7 @@ export const defaultData = {
       ],
     },
     {
-      name: "cabin in the woods",
+      name: "cabin in the woods but it's actually",
       cover: "/cabin.jpg",
       tags: [
         {
