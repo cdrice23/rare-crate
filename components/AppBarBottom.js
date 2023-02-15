@@ -13,6 +13,7 @@ import {
 import { styled } from "@mui/system";
 import AddIcon from "@mui/icons-material/Add";
 import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import BarChartIcon from "@mui/icons-material/BarChart";
 import PersonIcon from "@mui/icons-material/Person";
 import Link from "next/link";
 
@@ -39,9 +40,12 @@ export default function AppBarBottom(props) {
             component="a"
             LinkComponent={Link}
           >
-            <LinearScaleIcon sx={{ transform: "rotate(90deg)" }} />
+            <BarChartIcon
+              sx={{ transform: "rotate(90deg)" }}
+              fontSize="large"
+            />
           </IconButton>
-          <StyledFab color="secondary" aria-label="add">
+          <StyledFab color="white" aria-label="add">
             <AddIcon />
           </StyledFab>
           <Box sx={{ flexGrow: 1 }}></Box>
@@ -53,7 +57,7 @@ export default function AppBarBottom(props) {
             component="a"
             LinkComponent={Link}
           >
-            <PersonIcon />
+            <PersonIcon fontSize="large" />
           </IconButton>
         </Toolbar>
       </AppBar>
