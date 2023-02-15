@@ -24,6 +24,7 @@ export default function Profile(props) {
         position={"sticky"}
         top={"56px"}
         sx={{ backgroundColor: theme.palette.background.default }}
+        zIndex={2}
       >
         <ProfileHeader />
         <ProfileCenter />

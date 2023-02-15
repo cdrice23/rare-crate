@@ -159,4 +159,33 @@ export const defaultData = {
       ],
     },
   ],
+  crate: {
+    title: "Top Albums of 2021",
+    createdBy: "ricechrisdtreat",
+    cover: "/bestof2021.jpg",
+    tags: [
+      {
+        name: "Top Albums",
+        officialTag: true,
+      },
+      {
+        name: "2021",
+        officialTag: true,
+      },
+    ],
+    description: `I'll be the first to admit that I have a problem when it comes to British artists...`,
+    createdDate: "12-22-2021",
+    updatedDate: "",
+    likes: 20,
+    albumCount: 10,
+    ranked: false,
+    private: false,
+    albums: [
+      {
+        title: "",
+        artist: "",
+        cover: "",
+      },
+    ],
+  },
 };

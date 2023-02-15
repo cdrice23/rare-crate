@@ -19,13 +19,11 @@ export default function TabMenu({ handleChange, value }) {
         >
           <Button
             variant="text"
-            display="flex"
-            direction={"column"}
             sx={{ flexWrap: "wrap" }}
             value={0}
             onClick={(event) => handleChange(event)}
           >
-            <Typography variant="h5" value={0}>
+            <Typography variant="h5" value={0} width="100%">
               8
             </Typography>
             <Typography>Followers</Typography>
@@ -48,7 +46,9 @@ export default function TabMenu({ handleChange, value }) {
             onClick={(event) => handleChange(event)}
           >
             <Grid item xs={12}>
-              <Typography variant="h5">12</Typography>
+              <Typography variant="h5" width="100%">
+                12
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography>Following</Typography>
@@ -71,7 +71,9 @@ export default function TabMenu({ handleChange, value }) {
             onClick={(event) => handleChange(event)}
           >
             <Grid item xs={12}>
-              <Typography variant="h5">4</Typography>
+              <Typography variant="h5" width="100%">
+                4
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography>Crates</Typography>
@@ -95,7 +97,9 @@ export default function TabMenu({ handleChange, value }) {
             onClick={(event) => handleChange(event)}
           >
             <Grid item xs={12}>
-              <Typography variant="h5">24</Typography>
+              <Typography variant="h5" width="100%">
+                24
+              </Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography>Favorites</Typography>
